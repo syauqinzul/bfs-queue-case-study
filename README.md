@@ -36,9 +36,12 @@ g++ bfs_jaringan.cpp -o bfs_jaringan
 
 ---
 
-## Struktur File
----
-text
+## Struktur Proyek
+
+```
+BFS mengguanakan queue/
 ├── bfs_jaringan.cpp           # Kode sumber
 ├── README.md                  # Dokumentasi
 └── studi_kasus_bfs_queue.docx # Studi kasus
+```
+
