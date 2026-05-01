@@ -21,7 +21,7 @@ int graf[MAXNODE][MAXNODE] = {
     {  0, 0, 1, 0, 1, 0 }  // F
 };
 
-void BFS(int mulai) {
+void BFS(int mulai) {  // Fungsi BFS menerima parameter indeks simpul awal
     bool dikunjungi[MAXNODE] = {false};
     queue<int> antrian;
 
@@ -29,13 +29,13 @@ void BFS(int mulai) {
     dikunjungi[mulai] = true;
     antrian.push(mulai);
 
-    cout << "Urutan BFS dari simpul " << namaKota[mulai] << ":" << endl;
+    cout << "Urutan BFS dari simpul " << namaKota[mulai] << ":" << endl; // Tampilkan info simpul awal penelusuran
 
-    while (!antrian.empty()) {
-        int simpul = antrian.front();
-        antrian.pop();
+    while (!antrian.empty()) {   // Ulangi selama Queue masih ada isinya
+        int simpul = antrian.front();  // Ambil simpul paling depan Queue (FIFO)
+        antrian.pop();                 // Hapus simpul terdepan dari Queue
 
-        cout << namaKota[simpul] << " ";
+        cout << namaKota[simpul] << " ";   // Cetak nama kota yang sedang dikunjungi
 
         // Kunjungi semua tetangga yang belum dikunjungi
         for (int i = 0; i < MAXNODE; i++) {
@@ -45,13 +45,15 @@ void BFS(int mulai) {
             }
         }
     }
-    cout << endl;
+    cout << endl;  // Pindah baris setelah semua simpul dicetak
 }
 
+// FUNGSI MAIN
 int main() {
-    int pilihan;
+    int pilihan;  // Variabel untuk menyimpan pilihan menu dari pengguna
 
     do {
+        // Tampilkan menu utama program
         cout << "\n=== PROGRAM BFS MENGGUNAKAN QUEUE ===" << endl;
         cout << "Graf Kota yang tersedia: A, B, C, D, E, F" << endl;
         cout << "1. Jalankan BFS dari simpul A" << endl;
@@ -59,9 +61,9 @@ int main() {
         cout << "3. Tampilkan matriks adjacency" << endl;
         cout << "4. Keluar" << endl;
         cout << "Pilih menu: ";
-        cin >> pilihan;
+        cin >> pilihan;  // Baca input pilihan dari pengguna
 
-        switch (pilihan) {
+        switch (pilihan) {  // Percabangan berdasarkan nilai pilihan
             case 1:
                 BFS(0); // Mulai dari A (indeks 0)
                 break;
@@ -82,5 +84,5 @@ int main() {
         }
     } while (pilihan != 4);
 
-    return 0;
+    return 0; // Program selesai dengan status sukses
 }
