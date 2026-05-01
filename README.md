@@ -34,11 +34,11 @@ Program C++ untuk menelusuri jaringan komputer menggunakan algoritma **BFS (Brea
 g++ bfs_jaringan.cpp -o bfs_jaringan
 ./bfs_jaringan
 
+---
+
 ## Struktur File
-
-
+---
+text
 ├── bfs_jaringan.cpp           # Kode sumber
 ├── README.md                  # Dokumentasi
 └── studi_kasus_bfs_queue.docx # Studi kasus
-
-```
